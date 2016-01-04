@@ -1,12 +1,13 @@
 ﻿Imports System.IO
 Imports System.Net
-
+'\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ THIS IS FOR PUBLIC UPDATES FOR GSERVER. ///////////////////////////////////
 Public Class applicationUpdater
 
     Dim web As New WebClient
     Dim filePath As String = CurDir()
 
-    'Dim LatestAppVersion As String = web.DownloadString("http://24.210.18.72:64080/gmodversion.txt")
+'This is used for public updates for GServer. This line can be deleted. 
+    'Dim LatestAppVersion As String = web.DownloadString("http://liveoriginal.servegame.com/gmodversion.txt")
 
     Dim client As WebClient = New WebClient
 
@@ -38,7 +39,7 @@ Public Class applicationUpdater
         'MsgBox("There is a new update available and will begin to download.")
 
         Try
-            client.DownloadFileAsync(New Uri("http://24.210.18.72:64080/gmodupdates/GMOD%20Dedicated%20Server.exe"), filePath & "/GMOD Dedicated Server.gmdsu")
+            client.DownloadFileAsync(New Uri("http://liveoriginal.servegame.com/gmodupdates/GMOD%20Dedicated%20Server.exe"), filePath & "/GMOD Dedicated Server.gmdsu")
         Catch ex As Exception
             MsgBox(ex.Message, "Error")
             Me.Close()
